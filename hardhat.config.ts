@@ -12,6 +12,12 @@ const config: HardhatUserConfig = {
         runs: 200
       },
       viaIR: true,
+      // Suppress specific warnings
+      evmVersion: "shanghai",
+      // Disable unused parameter warnings
+      debug: {
+        revertStrings: "strip"
+      }
     },
   },
    networks: {

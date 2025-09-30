@@ -109,6 +109,15 @@ If you encounter build errors:
 2. Ensure TypeScript compilation passes: `npm run build`
 3. Check Vercel build logs in the dashboard
 
+### Solidity Warnings
+
+If you see Solidity warnings about unused parameters:
+
+1. The warnings are automatically suppressed during Vercel builds
+2. For local development, use: `npm run build:silent`
+3. Warnings don't affect the frontend build process
+4. To suppress specific warnings, update `.solhint.json`
+
 ### Environment Variables Not Working
 
 1. Verify variables are set in Vercel dashboard

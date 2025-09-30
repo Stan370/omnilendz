@@ -1,0 +1,22 @@
+{
+  "extends": "solhint:recommended",
+  "rules": {
+    "no-unused-vars": "off",
+    "unused-param": "off",
+    "unused-return": "off",
+    "no-console": "off",
+    "compiler-version": "off",
+    "func-visibility": "off",
+    "constructor-syntax": "off",
+    "modifier-syntax": "off",
+    "no-empty-blocks": "off",
+    "no-inline-assembly": "off",
+    "no-unused-import": "off",
+    "no-unused-param": "off",
+    "no-unused-return": "off",
+    "no-unused-vars": "off",
+    "no-unused-param": "off",
+    "no-unused-return": "off",
+    "no-unused-vars": "off"
+  }
+}

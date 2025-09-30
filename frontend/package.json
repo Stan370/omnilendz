@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "SOLC_WARNINGS= vite build",
+    "build:silent": "SOLC_WARNINGS= vite build --logLevel silent",
     "preview": "vite preview"
   },
   "dependencies": {

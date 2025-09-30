@@ -14,6 +14,8 @@ if ! vercel whoami &> /dev/null; then
 fi
 
 echo "📦 Building project..."
+# Suppress Solidity warnings during build
+export SOLC_WARNINGS=""
 npm run build
 
 if [ $? -ne 0 ]; then

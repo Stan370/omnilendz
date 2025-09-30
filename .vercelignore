@@ -1,0 +1,28 @@
+# Ignore Solidity files and contracts
+contracts/
+artifacts/
+cache/
+typechain-types/
+scripts/
+hardhat.config.ts
+.solhint.json
+
+# Ignore development files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Ignore build artifacts
+node_modules/
+dist/
+build/
+
+# Ignore git files
+.git/
+.gitignore
+
+# Ignore documentation
+README.md
+DEPLOYMENT.md
