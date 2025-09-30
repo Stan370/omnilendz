@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* small theme helpers */
+:root {
+  --bg-1: #0b1020;
+  --bg-2: #0b1228;
+}
+
+body {
+  background: linear-gradient(135deg, var(--bg-1), var(--bg-2));
+}

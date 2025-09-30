@@ -10,7 +10,7 @@ async function main() {
   console.log("GatewayMock:", await gateway.getAddress());
 
   const Omni = await ethers.getContractFactory("OmniLendZ");
-  const omni = await Omni.deploy(await gateway.getAddress());
+  const omni = await Omni.deploy();
   await omni.waitForDeployment();
   console.log("OmniLendZ:", await omni.getAddress());
 

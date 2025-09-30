@@ -10,7 +10,7 @@ yarn-error.log*
 .env.development.local
 .env.test.local
 .env.production.local
-
+dist/
 # Hardhat
 cache/
 artifacts/
@@ -39,7 +39,6 @@ pids/
 # Output of 'npm pack'
 *.tgz
 
-# Yarn Integrity file
 .yarn-integrity
 
 # dotenv environment variables file
@@ -49,22 +48,6 @@ pids/
 .cache/
 .parcel-cache/
 
-# next.js build output
-.next/
-
-# nuxt.js build output
-.nuxt/
-
-# vuepress build output
-.vuepress/dist/
-
-# Serverless directories
-.serverless/
-
-# FuseBox cache
-.fusebox/
-
-# DynamoDB Local files
 .dynamodb/
 
 # TernJS port file
