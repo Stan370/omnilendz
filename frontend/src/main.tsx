@@ -1,28 +1,37 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { WagmiProvider } from "wagmi";
-import { sepolia, hardhat } from "wagmi/chains";
-import { RainbowKitProvider, getDefaultConfig } from "@rainbow-me/rainbowkit";
-import "@rainbow-me/rainbowkit/styles.css";
-import Omni from "./omni";
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import { WagmiConfig, createConfig, configureChains } from 'wagmi'
+import { mainnet, sepolia, base, baseSepolia } from 'wagmi/chains'
+import { publicProvider } from 'wagmi/providers/public'
+import { RainbowKitProvider, getDefaultWallets } from '@rainbow-me/rainbowkit'
+import '@rainbow-me/rainbowkit/styles.css'
+import App from './App'
+import './index.css'
 
-const config = getDefaultConfig({
-  appName: "OmniLend",
-  projectId: "6b8dffe27742c84e187d46b3c3943edb",
-  chains: [hardhat, sepolia],
-});
+const { chains, publicClient, webSocketPublicClient } = configureChains(
+  [mainnet, sepolia, base, baseSepolia],
+  [publicProvider()]
+)
 
-const queryClient = new QueryClient();
+const { connectors } = getDefaultWallets({
+  appName: 'OmniLendZ',
+  projectId: import.meta.env.VITE_WALLETCONNECT_PROJECT_ID || 'YOUR_PROJECT_ID',
+  chains
+})
 
-ReactDOM.createRoot(document.getElementById("root")!).render(
+const config = createConfig({
+  autoConnect: true,
+  connectors,
+  publicClient,
+  webSocketPublicClient,
+})
+
+ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <WagmiProvider config={config}>
-      <QueryClientProvider client={queryClient}>
-        <RainbowKitProvider>
-          <Omni />
-        </RainbowKitProvider>
-      </QueryClientProvider>
-    </WagmiProvider>
-  </React.StrictMode>
-);
+    <WagmiConfig config={config}>
+      <RainbowKitProvider chains={chains}>
+        <App />
+      </RainbowKitProvider>
+    </WagmiConfig>
+  </React.StrictMode>,
+)
