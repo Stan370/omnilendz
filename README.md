@@ -1,6 +1,6 @@
 # OmniLendZ - Cross-Chain Lending on ZetaChain
 ![OmniLendZ](frontend/a.png)
-unified liquidity pool + cross-chain intents + AI-friendly hooks.
+A cross-chain DEX is just one example of an Omnichain dApp. With general message passing and Omnichain Smart Contracts.
 
 ## what you get
 - `contracts/OmniLendZ.sol`: core lending pool (deposit/borrow/repay/liq) on a single EVM chain (zEVM-like).
