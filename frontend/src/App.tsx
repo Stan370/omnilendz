@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { useAccount } from "wagmi";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { createPublicClient, http, formatUnits, parseUnits } from "viem";
@@ -13,16 +13,8 @@ const WETH = "0x0000000000000000000000000000000000000002"; // placeholder
 
 export default function App() {
   const { address, isConnected } = useAccount();
-  const [collat, setCollat] = useState("0");
-  const [debt, setDebt] = useState("0");
   const [mockConnected, setMockConnected] = useState(false);
   const [mockAddress, setMockAddress] = useState("0x1234567890123456789012345678901234567890");
-
-  const omni = useMemo(() => ({
-    address: OMNI_ADDRESS,
-    abi
-  }), []);
-
   useEffect(() => {
     (async () => {
       if (!address && !mockConnected) return;
