@@ -320,7 +320,6 @@ contract OmniLendZ is UniversalContract {
 
     function _processLiquidate(CrossChainMessage memory message) internal {
         // Simplified liquidation logic
-        // In production: implement proper liquidation checks
         emit Liquidate(
             message.user, // liquidator
             message.user, // victim (simplified)
